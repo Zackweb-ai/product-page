@@ -15,6 +15,7 @@ export const Nav = () => {
   let [displayCart, setDisplayCart] = useState(false);
   return (
     <div className="nav">
+      <div className="pad">
       <div className="nav-laptop">
         <div className="border">
           <div className="nav-start">
@@ -43,6 +44,7 @@ export const Nav = () => {
             <img className="avatar" src={avatar} alt="avatar" />
           </div>
         </div>
+      </div>
       </div>
       <div className="nav-mobile">
         <div className="chade active"></div>

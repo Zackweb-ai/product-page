@@ -18,7 +18,8 @@ body {
   display: flex;
   width: 85%;
   justify-content: space-between;
-  padding: 20px;
+  height: 100%;
+  margin-top: 20px;
 }
 .slider{
   display: none;
@@ -35,10 +36,18 @@ body {
 }
 .nav ul li {
   padding: 7px;
+  padding-bottom: 20px;
 }
 .nav ul li a {
   text-decoration: none;
   color: hsl(219, 9%, 45%);
+  line-height: 20px;
+}
+.nav ul li:hover {
+  border-bottom: 3px solid hsl(26, 100%, 55%);
+}
+.pad{
+  padding: 10px;
 }
 .Name {
   font-size: 30px;
@@ -77,8 +86,8 @@ body {
   color: hsl(219, 9%, 45%);
 }
 .avatar {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   border-radius: 50%;
 }
