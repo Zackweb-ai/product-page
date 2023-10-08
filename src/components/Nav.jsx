@@ -13,6 +13,10 @@ export const Nav = () => {
   const { counter } = useCart();
   
   let [displayCart, setDisplayCart] = useState(false);
+  const [NavMobile, setNavMobile] = useState(false);
+  const handleClick = () => {
+    setNavMobile(!NavMobile);
+  }
   return (
     <div className="nav">
       <div className="pad">
@@ -46,45 +50,52 @@ export const Nav = () => {
         </div>
       </div>
       </div>
-      <div className="nav-mobile">
-        <div className="chade active"></div>
-        <div className="side active">
-          <img className="close" src={close} alt="close" />
-          <ul className="nav-menu">
-            <li>
-              <a href="#">Collecions</a>
-            </li>
-            <li>
-              <a href="#">Men</a>
-            </li>
-            <li>
-              <a href="#">Women</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
+        <div className="nav-mobile ">
+       { NavMobile ? (
+        <>
+          <div className="chade "></div>
+          <div className="side">
+            <img className="close" src={close} alt="close" onClick={handleClick} />
+            <ul className="nav-menu">
+              <li>
+                <a href="#">Collecions</a>
+              </li>
+              <li>
+                <a href="#">Men</a>
+              </li>
+              <li>
+                <a href="#">Women</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+          </>
+       ):''}
         <div className="nav-start">
           <div className="start">
-            <img className="burger" src={burger} alt="" />
+            <img className="burger" src={burger} alt="" onClick={handleClick} />
             <p className="Name">sneakers</p>
           </div>
         </div>
         <div className="nav-end">
+        <div className="items">{cart.length}</div>
          <img
             className="cart"
             src={cartIcon}
             alt="cart"
+            onClick={() => setDisplayCart(!displayCart)}
           />
           <img className="avatar" src={avatar} alt="avatar" />
         </div>
       </div>
       {displayCart && (
-        <div className="cart_items">
+        <div className="center">
+          <div className="cart_items">
           <p className="cart-top">Cart</p>
           {cart.length === 0 ? (
             <div className="empty">Your Cart is empty</div>
@@ -112,6 +123,7 @@ export const Nav = () => {
           )}
 
           <div></div>
+        </div>
         </div>
       )}
     </div>
